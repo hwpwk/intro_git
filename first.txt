@@ -8,3 +8,5 @@ git add
 
 git rm
 #ƒtƒ@ƒCƒ‹‚ğÁ‚·
+
+git status
