@@ -5,3 +5,6 @@ git init
 git add
 #変更を追加する
 ＃もう一度変更する
+
+git rm
+#ファイルを消す
