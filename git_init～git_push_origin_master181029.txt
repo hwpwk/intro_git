@@ -1,0 +1,74 @@
+﻿xxx xxx@DM-1801141 MINGW32 ~ (master)
+$ cd MUxx2
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git init
+Initialized empty Git repository in C:/Users/xxx xxx/MUxx2/.git/
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git add "CountVectorizerによる文書のベクトル化(bag_of_word)+DataFrame化_parse で形態素解析_181029.ipynb"
+warning: LF will be replaced by CRLF in CountVectorizerによる文書のベクトル化(bag_of_word)+DataFrame化_parseで形態素解析_181029.ipynb.
+The file will have its original line endings in your working directory.
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git commit -v
+[master (root-commit) cec44e4] parse()で形態素解析をしてBowを実行しデータフレームに格納するコードに変更
+ 1 file changed, 980 insertions(+)
+ create mode 100644 "CountVectorizer\343\201\253\343\202\210\343\202\213\346\226\207\346\233\270\343\201\256\343\203\231\343\202\257\343\203\210\343\203\253\345\214\226(bag_of_word)+DataFrame\345\214\226_parse\343\201\247\345\275\242\346\205\213\347\264\240\350\247\243\346\236\220_181029.ipynb"
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git remote add origin https://github.com/hwpwk/NLP
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git push -u origin master
+To https://github.com/hwpwk/NLP
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/hwpwk/NLP'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+## ここから「error: failed to push some refs to 'https://github.com...」エラーを解決していく
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git fetch
+warning: no common commits
+remote: Enumerating objects: 42, done.
+remote: Counting objects: 100% (42/42), done.
+remote: Compressing objects: 100% (42/42), done.
+Receiving objeremote: Total 138 (delta 18), reused 0 (delta 0), pack-reused 96
+Receiving objects: 100% (138/138), 3.15 MiB | 3.21 MiB/s, done.
+Resolving deltas: 100% (60/60), done.
+From https://github.com/hwpwk/NLP
+ * [new branch]      master     -> origin/master
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git merge origin/master
+fatal: refusing to merge unrelated histories
+## ここで「refusing to merge unrelated histories」というエラーが出た場合は「git merge --allow-unrelated-histories origin/master」とする
+
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git merge --allow-unrelated-histories origin/master
+Merge made by the 'recursive' strategy.
+ 2ch_fasttext_180720.ipynb                          | 31438 +++++++++++++++++++
+ 2ch_fasttext_Mac_180711_save.ipynb                 |  1000 +
+ Sales_Ranking_201706.csv                           |    68 +
+ Sales_Ranking_201707.csv                           |    68 +
+ Sales_Ranking_201708.csv                           |    65 +
+ Sales_Ranking_201709.csv                           |    67 +
+ football_tweets_wordcloud_norm10_180912.jpeg       |   Bin 0 -> 169101 bytes
+ janome_test_181009.ipynb                           |   125 +
+ ・・（長いので一部省略）
+xxx xxx@DM-1801141 MINGW32 ~/MUxx2 (master)
+$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 7.76 KiB | 2.59 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/hwpwk/NLP
+   e69c388..ae78afa  master -> master
+
