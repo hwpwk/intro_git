@@ -1,0 +1,15 @@
+#ローカルリポジトリの作成
+git init
+#.gitディレクトリが作成される
+
+git add
+#変更を追加する
+＃もう一度変更する
+
+git rm
+#ファイルを消す
+
+git status
+
+git diff
+

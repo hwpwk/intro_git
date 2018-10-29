@@ -1,0 +1,522 @@
+
+Owner@Owner-PC MINGW64 ~
+$ cd ~/Desktop
+
+Owner@Owner-PC MINGW64 ~/Desktop
+$ cd intro_git
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git
+$ ls
+first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git
+$ git init
+Initialized empty Git repository in C:/Users/Owner/Desktop/intro_git/.git/
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls -a
+./  ../  .git/  first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls -a .git
+./  ../  config  description  HEAD  hooks/  info/  objects/  refs/
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit
+[master (root-commit) fcb901f] initial commit
+ 1 file changed, 6 insertions(+)
+ create mode 100644 first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git remote add origin https://github.com/hwpwk/intro_git.git
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 302 bytes | 100.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/hwpwk/intro_git/pull/new/master
+remote:
+To https://github.com/hwpwk/intro_git.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add .
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   first.txt
+
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit -v
+[master 3e242f5] もう一度変更するというコマンドを追記
+ 1 file changed, 1 insertion(+)
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log
+commit 3e242f522813a012817f92518d96fdd40c0507dd (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 15:00:10 2018 +0900
+
+    もう一度変更するというコマンドを追記
+
+    コマンド練習のため
+
+commit fcb901f5f70f0040749964ca307474baed44dfde (origin/master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 14:32:55 2018 +0900
+
+    initial commit
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ^C
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit -v
+[master fdf5a84] second.txtを追加
+ 1 file changed, 108 insertions(+)
+ create mode 100644 second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt  second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ rm
+.git/       first.txt   second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ rm second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git rm second.txt
+rm 'second.txt'
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit -v
+[master 29433d1] second.txtの削除
+ 1 file changed, 108 deletions(-)
+ delete mode 100644 second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add .
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit -v
+[master cabd102] 複数ファイルのコミット
+ 2 files changed, 111 insertions(+)
+ create mode 100644 second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   first.txt
+
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit -v
+[master 0e433b7] git statusコマンドを追記
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:08:23 2018 +0900
+
+    複数ファイルのコミット
+
+commit 29433d17f235cb7d9a7e16fea57fc0d47d7fad32
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:08:23 2018 +0900
+
+    複数ファイルのコミット
+
+commit 29433d17f235cb7d9a7e16fea57fc0d47d7fad32
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:06:39 2018 +0900
+
+    second.txtの削除
+
+commit fdf5a84e02c2a6e02dc534bf149b77d579bdff41
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:04:01 2018 +0900
+
+    second.txtを追加
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log --oneline
+0e433b7 (HEAD -> master) git statusコマンドを追記
+cabd102 複数ファイルのコミット
+29433d1 second.txtの削除
+fdf5a84 second.txtを追加
+3e242f5 もう一度変更するというコマンドを追記
+fcb901f (origin/master) initial commit
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log -n 3
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:08:23 2018 +0900
+
+    複数ファイルのコミット
+
+commit 29433d17f235cb7d9a7e16fea57fc0d47d7fad32
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:06:39 2018 +0900
+
+    second.txtの削除
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log --oneline -n 3
+0e433b7 (HEAD -> master) git statusコマンドを追記
+cabd102 複数ファイルのコミット
+29433d1 second.txtの削除
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log -p
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+diff --git a/first.txt b/first.txt
+index 778bdc7..0acb518 100644
+--- a/first.txt
++++ b/first.txt
+@@ -7,4 +7,6 @@ git add
+ <81><94><82><E0><82><A4><88><EA><93>x<95>?X<82><B7><82><E9>
+
+ git rm
+-#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>
+\ No newline at end of file
++#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>^M
++^M
++git status
+\ No newline at end of file
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+:
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+diff --git a/first.txt b/first.txt
+index 778bdc7..0acb518 100644
+--- a/first.txt
++++ b/first.txt
+@@ -7,4 +7,6 @@ git add
+ <81><94><82><E0><82><A4><88><EA><93>x<95>?X<82><B7><82><E9>
+
+ git rm
+-#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>
+\ No newline at end of file
++#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>^M
++^M
++git status
+\ No newline at end of file
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git log -p first.txt
+commit 0e433b773db7486d2bbeabbd7e61306e6d696070 (HEAD -> master)
+Author: Tomori_Kengo <hwpwk079@gmail.com>
+Date:   Sun Oct 28 16:13:07 2018 +0900
+
+    git statusコマンドを追記
+
+diff --git a/first.txt b/first.txt
+index 778bdc7..0acb518 100644
+--- a/first.txt
++++ b/first.txt
+@@ -7,4 +7,6 @@ git add
+ <81><94><82><E0><82><A4><88><EA><93>x<95>?X<82><B7><82><E9>
+
+ git rm
+-#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>
+\ No newline at end of file
++#<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>^M
++^M
++git status
+\ No newline at end of file
+
+commit cabd102c43a5e807f33b48cdc9f9dc6f9691cf90
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git diff
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git diff
+diff --git a/first.txt b/first.txt
+index 0acb518..0da9a64 100644
+--- a/first.txt
++++ b/first.txt
+@@ -9,4 +9,7 @@ git add
+ git rm
+ #<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>
+
+-git status
+\ No newline at end of file
++git status^M
++^M
++git diff^M
++
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git add .
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git diff
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git diff HEAD
+diff --git a/first.txt b/first.txt
+index 0acb518..0da9a64 100644
+--- a/first.txt
++++ b/first.txt
+@@ -9,4 +9,7 @@ git add
+ git rm
+ #<83>t<83>@<83>C<83><8B><82><F0><8F><C1><82><B7>
+
+-git status
+\ No newline at end of file
++git status^M
++^M
++git diff^M
++
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git commit
+[master f17bed1] gut diffを追記
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git diff
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git remote add origin https://github.com/hwpwk/intro_git
+fatal: remote origin already exists.
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git push origin master
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 2.66 KiB | 544.00 KiB/s, done.
+Total 16 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/hwpwk/intro_git.git
+   fcb901f..f17bed1  master -> master
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt  second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git rm second.txt
+rm 'second.txt'
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    second.txt
+
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git reset HEAD second.txt
+Unstaged changes after reset:
+D       second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    second.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git checkout second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt  second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git rm --cached second.txt
+rm 'second.txt'
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt  second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    second.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        second.txt
+
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git reset HEAD second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ ls
+first.txt  second.txt
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Owner@Owner-PC MINGW64 ~/Desktop/intro_git (master)
+$
+
